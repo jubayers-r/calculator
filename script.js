@@ -1,32 +1,25 @@
-const minNum = 50;
-const maxNum = 100;
-const answer = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
+const input = document.getElementById("temp-input");
+const celToFar = document.getElementById("cel-far");
+const farToCel = document.getElementById("far-cel");
+const mySubmit = document.getElementById("mySubmit");
+let converted = document.getElementById("converted");
 
-let guess;
-let attempts = 0;
-let running = true;
-
-let message = `Guess a number between ${minNum} and ${maxNum}:`;
-while (running) {
-  guess = window.prompt(message);
-  guess = Number(guess);
-
-  if (isNaN(guess)) {
-    window.alert(
-      `Invalid number! Try again guessing a number between ${minNum} and ${maxNum}.`
-    );
-  } else if (guess < minNum || guess > maxNum) {
-    window.alert(`Out of range! Please guess between ${minNum} and ${maxNum}.`);
-  } else {
-    attempts++;
-    if (guess > answer) {
-      message = `Too high! Guess a lower number between ${minNum} and ${maxNum}:`;
-    } else if (guess < answer) {
-      message = `Too low! Guess a higher number between ${minNum} and ${maxNum}:`;
+mySubmit.onclick = () =>{
+    let convert;
+    let temp = Number(input.value);
+    if (isNaN(temp)) {
+        converted.textContent = `input a valid number`
     } else {
-      running = false;
-      window.alert(`CONGRATS! ${answer} is the correct guess!`);
-      window.alert(`It took you ${attempts} attempts.`);
+        if (celToFar.checked) {
+            convert = (temp * 9/5) + 32;
+            converted.textContent = `${convert.toFixed(1)}°F`
+        }
+        else if (farToCel.checked) {
+            convert = (temp - 32) * 5/9;
+            converted.textContent = `${convert.toFixed(1)}°C`
+        }
+        else {
+            converted.textContent = `Select a unit`
+        }
     }
-  }
 }
