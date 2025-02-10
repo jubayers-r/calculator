@@ -7,7 +7,6 @@ function clearDisplay() {
     display.textContent = "";
 }
 function result () {
-    if (display.textContent = "Error")
     try {
         display.textContent = eval(display.textContent);
     }
