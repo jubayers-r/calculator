@@ -8,19 +8,118 @@
     <link rel="stylesheet" href="./src/output.css" />
   </head>
   <body>
-    <form action="" class="text-center m-3">
-      <h1>Temperature Converter</h1>
-      <input type="text" name="" id="temp-input" /> <br />
-
-      <input type="radio" name="convert" id="cel-far" />
-      <label for="cel-far">Celsius &rarr; Fahrenheit</label> <br />
-
-      <input type="radio" name="convert" id="far-cel" />
-      <label for="far-cel">Fahrenheit &rarr; Celsius</label> <br />
-
-      <button class="btn" id="mySubmit">Submit</button>
-
-      <h1 id="converted"></h1>
-    </form>
+    <div class="bg-[#262626] rounded-xl max-w-sm mx-auto mt-5">
+      <!-- Display -->
+      <div
+        id="display"
+        class="bg-[#333333] text-white text-4xl font-bold text-right p-8 rounded-lg h-24"
+      ></div>
+      <!-- Buttons -->
+      <div class="grid grid-cols-4 gap-2 p-5">
+        <div
+          onclick="appendToDisplay(`+`)"
+          class="btn w-20 h-20 border-0 rounded-full bg-[#f59f1f] text-white text-4xl font-bold hover:bg-orange-300"
+        >
+          +
+        </div>
+        <div
+          onclick="appendToDisplay(7)"
+          class="btn w-20 h-20 border-0 rounded-full bg-[#4d4d4d] text-white text-4xl font-bold hover:bg-neutral-400"
+        >
+          7
+        </div>
+        <div
+          onclick="appendToDisplay(8)"
+          class="btn w-20 h-20 border-0 rounded-full bg-[#4d4d4d] text-white text-4xl font-bold hover:bg-neutral-400"
+        >
+          8
+        </div>
+        <div
+          onclick="appendToDisplay(9)"
+          class="btn w-20 h-20 border-0 rounded-full bg-[#4d4d4d] text-white text-4xl font-bold hover:bg-neutral-400"
+        >
+          9
+        </div>
+        <div
+          onclick="appendToDisplay(`-`)"
+          class="btn w-20 h-20 border-0 rounded-full bg-[#f59f1f] text-white text-4xl font-bold hover:bg-orange-300"
+        >
+          -
+        </div>
+        <div
+          onclick="appendToDisplay(4)"
+          class="btn w-20 h-20 border-0 rounded-full bg-[#4d4d4d] text-white text-4xl font-bold hover:bg-neutral-400"
+        >
+          4
+        </div>
+        <div
+          onclick="appendToDisplay(5)"
+          class="btn w-20 h-20 border-0 rounded-full bg-[#4d4d4d] text-white text-4xl font-bold hover:bg-neutral-400"
+        >
+          5
+        </div>
+        <div
+          onclick="appendToDisplay(6)"
+          class="btn w-20 h-20 border-0 rounded-full bg-[#4d4d4d] text-white text-4xl font-bold hover:bg-neutral-400"
+        >
+          6
+        </div>
+        <div
+          onclick="appendToDisplay(`*`)"
+          class="btn w-20 h-20 border-0 rounded-full bg-[#f59f1f] text-white text-4xl font-bold hover:bg-orange-300"
+        >
+          *
+        </div>
+        <div
+          onclick="appendToDisplay(1)"
+          class="btn w-20 h-20 border-0 rounded-full bg-[#4d4d4d] text-white text-4xl font-bold hover:bg-neutral-400"
+        >
+          1
+        </div>
+        <div
+          onclick="appendToDisplay(2)"
+          class="btn w-20 h-20 border-0 rounded-full bg-[#4d4d4d] text-white text-4xl font-bold hover:bg-neutral-400"
+        >
+          2
+        </div>
+        <div
+          onclick="appendToDisplay(3)"
+          class="btn w-20 h-20 border-0 rounded-full bg-[#4d4d4d] text-white text-4xl font-bold hover:bg-neutral-400"
+        >
+          3
+        </div>
+        <div
+          onclick="appendToDisplay(`/`)"
+          class="btn w-20 h-20 border-0 rounded-full bg-[#f59f1f] text-white text-4xl font-bold hover:bg-orange-300"
+        >
+          /
+        </div>
+        <div
+          onclick="appendToDisplay(0)"
+          class="btn w-20 h-20 border-0 rounded-full bg-[#4d4d4d] text-white text-4xl font-bold hover:bg-neutral-400"
+        >
+          0
+        </div>
+        <div
+          onclick="appendToDisplay(`.`)"
+          class="btn w-20 h-20 border-0 rounded-full bg-[#4d4d4d] text-white text-4xl font-bold hover:bg-neutral-400"
+        >
+          .
+        </div>
+        <div
+          id="result"
+          onclick="result(`=`)"
+          class="btn w-20 h-20 border-0 rounded-full bg-[#4d4d4d] text-white text-4xl font-bold hover:bg-neutral-400"
+        >
+          =
+        </div>
+        <div
+          onclick="clearDisplay()"
+          class="btn w-20 h-20 border-0 rounded-full bg-[#f59f1f] text-white text-4xl font-bold hover:bg-orange-300"
+        >
+          C
+        </div>
+      </div>
+    </div>
   </body>
 </html>
